@@ -1,13 +1,18 @@
 import React from 'react';
-import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai';
+import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 
 const Footer = () => {
   return (
     <div className='footer-container'>
-      <p>2022 Yoshi Headphones All rights reserved</p>
+      <p>2022 Audiophile Haven All rights reserved</p>
       <p className='icons'>
+        <a href="https://www.instagram.com/bbfosho0/"> 
         <AiFillInstagram />
-        <AiOutlineTwitter />
+        </a>
+        <a href="https://www.linkedin.com/in/yoshigutierrez/">
+        <AiFillLinkedin />
+        </a>
+        
       </p>
     </div>
   )
