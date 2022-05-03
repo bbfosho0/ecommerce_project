@@ -1,3 +1,8 @@
+## Fully Functional Ecommerce Site
+Using Sanity, React, Next.js, JavaScript, CSS, & HTML, I've created a aesthetic website that sells different audio devices. 
+
+
+## Note
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
