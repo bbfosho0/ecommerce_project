@@ -8,64 +8,55 @@ Live site: https://ecommerce-project-xhu1-git-main-bbfosho0s-projects.vercel.app
 
 ## Screenshots
 
-The storefront is documented with tracked Playwright captures so reviewers can quickly see the polished ecommerce flows across desktop and mobile layouts.
+The storefront is documented with tracked Playwright captures so reviewers can quickly scan the completed ecommerce flow. Desktop screenshots are shown full-width for detail, while mobile captures are intentionally constrained so GitHub does not stretch the README layout.
 
-### Storefront
+### Homepage
 
-<table>
-  <tr>
-    <td width="50%">
-      <strong>Homepage - Desktop</strong><br />
-      <sub>Dark luxury storefront with live Sanity banner content, responsive product grid, promotional banner, and upgraded footer.</sub>
-    </td>
-    <td width="50%">
-      <strong>Homepage - Mobile</strong><br />
-      <sub>The same commerce flow stacked for narrow screens with preserved CTAs, product cards, and footer content.</sub>
-    </td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/home-desktop.png" alt="Audiophile Haven dark luxury ecommerce homepage on desktop" /></td>
-    <td><img src="docs/screenshots/home-mobile.png" alt="Audiophile Haven ecommerce homepage on mobile" /></td>
-  </tr>
-</table>
+**Desktop storefront**  
+Dark luxury landing experience with live Sanity banner content, responsive product cards, promotional content, and the rebuilt storefront footer.
+
+<p align="center">
+  <img src="docs/screenshots/home-desktop.png" alt="Audiophile Haven dark luxury ecommerce homepage on desktop" width="100%" />
+</p>
+
+**Mobile storefront**  
+The same commerce flow optimized for narrow screens with preserved CTAs, product browsing, and cart access.
+
+<p align="center">
+  <img src="docs/screenshots/home-mobile.png" alt="Audiophile Haven ecommerce homepage on mobile" width="320" />
+</p>
 
 ### Product Experience
 
-<table>
-  <tr>
-    <td width="50%">
-      <strong>Product Detail - Desktop</strong><br />
-      <sub>Dynamic Sanity product route with gallery, product details, quantity controls, and cart actions.</sub>
-    </td>
-    <td width="50%">
-      <strong>Product Detail - Mobile</strong><br />
-      <sub>Gallery-first purchase experience with the same cart behavior preserved on mobile.</sub>
-    </td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/product-desktop.png" alt="Audiophile Haven product detail page on desktop" /></td>
-    <td><img src="docs/screenshots/product-mobile.png" alt="Audiophile Haven product detail page on mobile" /></td>
-  </tr>
-</table>
+**Product detail - desktop**  
+Dynamic Sanity product route with gallery, product details, quantity controls, related products, and cart actions.
+
+<p align="center">
+  <img src="docs/screenshots/product-desktop.png" alt="Audiophile Haven product detail page on desktop" width="100%" />
+</p>
+
+**Product detail - mobile**  
+Gallery-first purchase experience with the same cart behavior preserved on mobile.
+
+<p align="center">
+  <img src="docs/screenshots/product-mobile.png" alt="Audiophile Haven product detail page on mobile" width="320" />
+</p>
 
 ### Cart and Confirmation
 
-<table>
-  <tr>
-    <td width="50%">
-      <strong>Cart Drawer</strong><br />
-      <sub>Slide-out cart with live item state, quantity controls, subtotal, and Stripe checkout CTA.</sub>
-    </td>
-    <td width="50%">
-      <strong>Checkout Success</strong><br />
-      <sub>Confirmation route that resets cart state and gives users a clean path back to shopping.</sub>
-    </td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/cart-drawer.png" alt="Audiophile Haven cart drawer with product subtotal" /></td>
-    <td><img src="docs/screenshots/success.png" alt="Audiophile Haven checkout success page" /></td>
-  </tr>
-</table>
+**Cart drawer**  
+Slide-out cart with live item state, quantity controls, subtotal, and Stripe checkout CTA.
+
+<p align="center">
+  <img src="docs/screenshots/cart-drawer.png" alt="Audiophile Haven cart drawer with product subtotal" width="820" />
+</p>
+
+**Checkout success**  
+Confirmation route that resets cart state and gives users a clean path back to shopping.
+
+<p align="center">
+  <img src="docs/screenshots/success.png" alt="Audiophile Haven checkout success page" width="820" />
+</p>
 
 ## Highlights
 
