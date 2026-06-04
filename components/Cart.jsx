@@ -67,9 +67,9 @@ const Cart = () => {
             <h3>Cart is empty</h3>
             <p>Products appear here after Sanity items are added.</p>
             <Link href="/">
-              <button type='button' onClick={() => setShowCart(false)} className="btn" >
+              <a onClick={() => setShowCart(false)} className="btn" >
                 Continue Shopping
-              </button>
+              </a>
             </Link>
           </div>
         )}

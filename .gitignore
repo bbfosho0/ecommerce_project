@@ -34,4 +34,5 @@ yarn-error.log*
 .gptallow
 .gptignore
 gpt.js
+.serena/
 
