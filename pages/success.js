@@ -9,7 +9,6 @@ const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
   
   useEffect(() => {
-    localStorage.clear();
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantities(0);
@@ -19,11 +18,11 @@ const Success = () => {
   return (
     <div className="success-wrapper">
       <div className="success">
-        <p className="icon">
-          <BsBagCheckFill />
+        <p className="icon" aria-hidden="true">
+          <BsBagCheckFill aria-hidden="true" />
         </p>
-        <h2>Thank you for your order!</h2>
-        <p className="email-msg">Check your email inbox for the receipt.</p>
+        <h1>Payment successful.</h1>
+        <p className="email-msg">Thank you for your order. Check your email inbox for the receipt.</p>
         <p className="description">
           If you have any questions, please email
           <a className="email" href="mailto:americanyosh@gmail.com">
@@ -31,7 +30,7 @@ const Success = () => {
           </a>
         </p>
         <Link href="/">
-          <button type="button" width="300px" className="btn">
+          <button type="button" className="btn">
             Continue Shopping
           </button>
         </Link>
