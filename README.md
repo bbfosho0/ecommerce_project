@@ -6,6 +6,67 @@ Audiophile Haven is a portfolio-focused frontend redesign that keeps the origina
 
 Live site: https://ecommerce-project-delta.vercel.app/
 
+## Screenshots
+
+The storefront is documented with tracked Playwright captures so reviewers can quickly see the polished ecommerce flows across desktop and mobile layouts.
+
+### Storefront
+
+<table>
+  <tr>
+    <td width="50%">
+      <strong>Homepage - Desktop</strong><br />
+      <sub>Dark luxury storefront with live Sanity banner content, responsive product grid, promotional banner, and upgraded footer.</sub>
+    </td>
+    <td width="50%">
+      <strong>Homepage - Mobile</strong><br />
+      <sub>The same commerce flow stacked for narrow screens with preserved CTAs, product cards, and footer content.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/home-desktop.png" alt="Audiophile Haven dark luxury ecommerce homepage on desktop" /></td>
+    <td><img src="docs/screenshots/home-mobile.png" alt="Audiophile Haven ecommerce homepage on mobile" /></td>
+  </tr>
+</table>
+
+### Product Experience
+
+<table>
+  <tr>
+    <td width="50%">
+      <strong>Product Detail - Desktop</strong><br />
+      <sub>Dynamic Sanity product route with gallery, product details, quantity controls, and cart actions.</sub>
+    </td>
+    <td width="50%">
+      <strong>Product Detail - Mobile</strong><br />
+      <sub>Gallery-first purchase experience with the same cart behavior preserved on mobile.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/product-desktop.png" alt="Audiophile Haven product detail page on desktop" /></td>
+    <td><img src="docs/screenshots/product-mobile.png" alt="Audiophile Haven product detail page on mobile" /></td>
+  </tr>
+</table>
+
+### Cart and Confirmation
+
+<table>
+  <tr>
+    <td width="50%">
+      <strong>Cart Drawer</strong><br />
+      <sub>Slide-out cart with live item state, quantity controls, subtotal, and Stripe checkout CTA.</sub>
+    </td>
+    <td width="50%">
+      <strong>Checkout Success</strong><br />
+      <sub>Confirmation route that resets cart state and gives users a clean path back to shopping.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/cart-drawer.png" alt="Audiophile Haven cart drawer with product subtotal" /></td>
+    <td><img src="docs/screenshots/success.png" alt="Audiophile Haven checkout success page" /></td>
+  </tr>
+</table>
+
 ## Highlights
 
 - Figma-informed dark luxury storefront with polished homepage, promo banner, professional footer, product cards, product detail pages, cart drawer, and success page.
@@ -116,6 +177,8 @@ NEXT_PUBLIC_STRIPE_SECRET_KEY=
 ```
 
 `SANITY_API_TOKEN` is server-only and optional when the Sanity dataset is publicly readable. Product images use a browser-safe Sanity image client without a token.
+
+The project declares Node `24.x` through `package.json` and `.nvmrc`; Vercel should also be configured to use Node `24.x` in Project Settings.
 
 ## Portfolio Notes
 
