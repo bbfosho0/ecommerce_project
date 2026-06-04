@@ -34,4 +34,9 @@ yarn-error.log*
 .gptallow
 .gptignore
 gpt.js
+.serena/
+.playwright-cli/
+/playwright-report/
+/test-results/
+/output/playwright/
 

@@ -1,21 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
-import { urlFor } from '../lib/client';
+import { urlFor } from '../lib/image';
 
 const Product = ({ product: { image, name, slug, price } }) => {
   return (
-    <div>
+    <article className="product-shell">
       <Link href={`/product/${slug.current}`}>
-        <div className='product-card'>
-          <img src={urlFor(image && image[0])}
-          width={250}
-          height={250}
-          className="product-image" />
-          <p className='product-name'>{name}</p>
-          <p className='product-price'>${price}</p>
-        </div>
+        <a className='product-card' aria-label={`View ${name}`}>
+          <span className="product-image-frame">
+            <img
+              src={urlFor(image && image[0])}
+              width={250}
+              height={250}
+              alt={name}
+              className="product-image"
+            />
+          </span>
+          <span className="product-meta">
+            <span>
+              <span className='product-name'>{name}</span>
+              <span className='product-note'>Sanity product</span>
+            </span>
+            <span className='product-price'>${price}</span>
+          </span>
+          <span className="product-link">View product</span>
+        </a>
       </Link>
-    </div>
+    </article>
   )
 }
 

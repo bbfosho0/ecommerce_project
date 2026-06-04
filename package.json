@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@sanity/client": "^2.23.2",
@@ -26,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.16.7",
+    "@playwright/test": "^1.60.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "^12.1.0",

@@ -4,18 +4,24 @@ import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
 
 const Home = ({ products, bannerData }) => (
-  <div>
-    <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
-    <div className="products-heading">
-      <h2>Best Selling Products</h2>
-      <p>grab them before we're out of stock!</p>
-    </div>
+  <div className="home-page">
+    <HeroBanner heroBanner={bannerData?.[0]} />
 
-    <div className="products-container">
-      {products?.map((product) => <Product key={product._id} product={product} />)}
-    </div>
+    <section className="products-section" id="products" aria-labelledby="featured-products-heading">
+      <div className="products-heading">
+        <p className="section-eyebrow">Featured listening</p>
+        <h2 id="featured-products-heading">Best Selling Products</h2>
+        <p>Live Sanity products, selected for high-fidelity everyday listening.</p>
+      </div>
 
-    <FooterBanner footerBanner={bannerData && bannerData[0]} />
+      <div className="products-container">
+        {products?.map((product) => <Product key={product._id} product={product} />)}
+      </div>
+    </section>
+
+    <section id="shipping" aria-label="Shipping and featured offer">
+      <FooterBanner footerBanner={bannerData?.[0]} />
+    </section>
   </div>
 );
 

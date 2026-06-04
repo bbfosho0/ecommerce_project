@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 
 const Context = createContext();
@@ -20,21 +20,19 @@ export const StateContext = ({ children }) => {
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
     
     if(checkProductInCart) {
-      const updatedCartItems = cartItems.map((cartProduct) => {
-        if(cartProduct._id === product._id) return {
+      const updatedCartItems = cartItems.map((cartProduct) => (
+        cartProduct._id === product._id ? {
           ...cartProduct,
           quantity: cartProduct.quantity + quantity
-        }
-      })
+        } : cartProduct
+      ))
 
       setCartItems(updatedCartItems);
     } else {
-      product.quantity = quantity;
-      
-      setCartItems([...cartItems, { ...product }]);
+      setCartItems([...cartItems, { ...product, quantity }]);
     }
 
-    toast.success(`${qty} ${product.name} added to the cart.`);
+    toast.success(`${quantity} ${product.name} added to the cart.`);
   } 
 
   const onRemove = (product) => {
