@@ -17,28 +17,35 @@ const ProductDetails = ({ product, products }) => {
   }
 
   return (
-    <div>
+    <div className="product-detail-page">
       <div className="product-detail-container">
-        <div>
+        <section className="product-gallery" aria-label={`${name} product images`}>
           <div className="image-container">
-            <img src={urlFor(image && image[index])} className="product-detail-image" />
+            <img src={urlFor(image && image[index])} alt={name} className="product-detail-image" />
           </div>
-          <div className="small-images-container">
+          <div className="small-images-container" aria-label="Select product image">
             {image?.map((item, i) => (
-              <img 
+              <button
+                type="button"
                 key={i}
-                src={urlFor(item)}
                 className={i === index ? 'small-image selected-image' : 'small-image'}
+                aria-label={`Show ${name} image ${i + 1}`}
+                aria-pressed={i === index}
+                onClick={() => setIndex(i)}
                 onMouseEnter={() => setIndex(i)}
-              />
+              >
+                <img src={urlFor(item)} alt="" />
+              </button>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="product-detail-desc">
-          <h1>{name}</h1>
-          <div className="reviews">
-            <div>
+        <section className="product-detail-desc" aria-labelledby="product-title">
+          <p className="product-route-label">product/[slug]</p>
+          <h1 id="product-title">{name}</h1>
+          <p className="price">${price}</p>
+          <div className="reviews" aria-label="Rated 4 out of 5 stars">
+            <div aria-hidden="true">
               <AiFillStar />
               <AiFillStar />
               <AiFillStar />
@@ -51,32 +58,34 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <h4>Details: </h4>
           <p>{details}</p>
-          <p className="price">${price}</p>
           <div className="quantity">
-            <h3>Quantity:</h3>
-            <p className="quantity-desc">
-              <span className="minus" onClick={decQty}><AiOutlineMinus /></span>
-              <span className="num">{qty}</span>
-              <span className="plus" onClick={incQty}><AiOutlinePlus /></span>
-            </p>
+            <h3 id="product-quantity-label">Quantity</h3>
+            <div className="quantity-desc" aria-labelledby="product-quantity-label">
+              <button type="button" className="minus" aria-label="Decrease quantity" onClick={decQty}>
+                <AiOutlineMinus aria-hidden="true" />
+              </button>
+              <span className="num" aria-live="polite">{qty}</span>
+              <button type="button" className="plus" aria-label="Increase quantity" onClick={incQty}>
+                <AiOutlinePlus aria-hidden="true" />
+              </button>
+            </div>
           </div>
           <div className="buttons">
             <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>Add to Cart</button>
             <button type="button" className="buy-now" onClick={handleBuyNow}>Buy Now</button>
           </div>
-        </div>
+        </section>
       </div>
 
-      <div className="maylike-products-wrapper">
-          <h2>You may also like</h2>
-          <div className="marquee">
-            <div className="maylike-products-container track">
-              {products.map((item) => (
-                <Product key={item._id} product={item} />
-              ))}
-            </div>
+      <section className="maylike-products-wrapper" aria-labelledby="related-products-heading">
+          <p className="section-eyebrow">More to audition</p>
+          <h2 id="related-products-heading">You may also like</h2>
+          <div className="related-products-grid">
+            {products.slice(0, 4).map((item) => (
+              <Product key={item._id} product={item} />
+            ))}
           </div>
-      </div>
+      </section>
     </div>
   )
 }
