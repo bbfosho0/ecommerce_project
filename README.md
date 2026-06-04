@@ -1,20 +1,20 @@
 # Audiophile Haven
 
-A premium consumer-tech ecommerce storefront built with Next.js, Sanity, React Context, and Stripe Checkout.
+A dark-luxury ecommerce storefront for premium audio gear, built with Next.js, Sanity, React Context, Stripe Checkout, and Playwright browser testing.
 
-Audiophile Haven is a portfolio-focused ecommerce application for audio products. The frontend has been redesigned around a polished Figma-driven visual system while preserving the original working product data, cart state, dynamic routing, and Stripe checkout flow.
+Audiophile Haven is a portfolio-focused frontend redesign that keeps the original commerce functionality intact: live CMS products, dynamic product pages, cart state, Stripe Checkout, and checkout success handling. The UI is now shaped around a Figma-led dark consumer-tech direction with large product imagery, metallic surfaces, sharp CTAs, and responsive layouts.
 
 Live site: https://ecommerce-project-delta.vercel.app/
 
 ## Highlights
 
-- Premium storefront UI with responsive homepage, product cards, product detail pages, cart drawer, and checkout success experience.
-- Live Sanity CMS product and banner content instead of hardcoded mock data.
-- Dynamic product pages generated from Sanity slugs with fallback support.
-- Cart drawer powered by React Context with add, remove, increment, decrement, subtotal, empty state, and checkout loading states.
-- Stripe Checkout integration through a Next.js API route.
-- Accessible UI improvements including semantic regions, descriptive image alt text, keyboard-friendly product thumbnails, dialog semantics, and visible focus styling.
-- Figma-informed design system using global CSS tokens for color, typography, spacing, radii, shadows, containers, and responsive behavior.
+- Figma-informed dark luxury storefront with polished homepage, promo banner, professional footer, product cards, product detail pages, cart drawer, and success page.
+- Live Sanity CMS product and banner content; no hardcoded product catalog.
+- Dynamic product routes generated from Sanity slugs with `fallback: 'blocking'`.
+- React Context cart drawer with add, remove, increment, decrement, subtotal, empty state, and checkout loading behavior.
+- Stripe Checkout session creation through a Next.js API route.
+- Browser-safe Sanity image URL builder separated from the server data client to avoid exposing CMS tokens in the browser bundle.
+- Local Playwright setup for repeatable browser smoke testing.
 
 ## Tech Stack
 
@@ -25,58 +25,28 @@ Live site: https://ecommerce-project-delta.vercel.app/
 - React Context API
 - React Hot Toast
 - React Icons
-- Global CSS with design tokens
+- Playwright
+- Global CSS design tokens and responsive layout systems
 
-## Core User Flow
+## Core Flow
 
-1. The homepage fetches live product and banner data from Sanity.
-2. Users browse responsive product cards and navigate to dynamic product detail routes.
-3. Product pages support image selection, quantity changes, Add to Cart, and Buy Now.
-4. The cart drawer shows real cart contents, quantity controls, subtotal, empty state, and Stripe checkout.
-5. Successful checkout redirects to `/success`, resets cart state, and displays a polished confirmation page.
+1. `/` fetches live Sanity banner and product data.
+2. Product cards link to `/product/[slug]`.
+3. Product detail pages support gallery selection, quantity changes, Add to Cart, and Buy Now.
+4. The cart drawer preserves real cart contents, subtotal, item controls, empty state, and checkout redirect.
+5. `/success` resets cart state, runs confirmation effects, and links back to the storefront.
 
 ## Project Structure
 
 ```text
-components/
-  Cart.jsx
-  Footer.jsx
-  FooterBanner.jsx
-  HeroBanner.jsx
-  Layout.jsx
-  Navbar.jsx
-  Product.jsx
-
-context/
-  StateContext.js
-
-lib/
-  client.js
-  getStripe.js
-  utils.js
-
-pages/
-  index.js
-  success.js
-  api/stripe.js
-  product/[slug].js
-
-sanity_ecommerce/
-  schemas/
-
-styles/
-  globals.css
+components/          Shared storefront, product, cart, navbar, and footer UI
+context/             React cart state and cart actions
+lib/                 Sanity client, browser-safe image builder, Stripe loader, effects
+pages/               Next.js routes and Stripe API route
+sanity_ecommerce/    Sanity schemas
+styles/              Global dark-luxury design system and responsive UI styles
+tests/e2e/           Playwright smoke tests
 ```
-
-## What I Focused On
-
-This project emphasizes the kind of work expected in a production frontend role:
-
-- Preserving working business logic while redesigning the presentation layer.
-- Keeping Sanity data, dynamic routes, cart state, and Stripe checkout intact during a visual overhaul.
-- Improving responsive behavior without changing frameworks or adding unnecessary dependencies.
-- Tightening accessibility and interaction details in product, cart, and success flows.
-- Validating changes with build, lint, and local browser smoke testing.
 
 ## Local Development
 
@@ -86,7 +56,7 @@ Install dependencies:
 npm install
 ```
 
-Run the frontend:
+Run the app:
 
 ```bash
 npm run dev
@@ -98,40 +68,64 @@ Open:
 http://localhost:3000
 ```
 
-If port 3000 is already in use:
+Use port `3002` if `3000` is already busy:
 
 ```bash
 npm run dev -- -p 3002
 ```
+
+## Playwright
+
+This repo includes local Playwright tooling. Install the Chromium browser once after dependency install:
+
+```bash
+npx playwright install chromium
+```
+
+Run the smoke suite:
+
+```bash
+npm run test:e2e
+```
+
+Useful variants:
+
+```bash
+npm run test:e2e:headed
+npm run test:e2e:ui
+```
+
+The test suite starts or reuses the local Next.js dev server at `http://localhost:3002`.
 
 ## Validation
 
 ```bash
 npm run lint
 npm run build
+npm run test:e2e
 ```
 
-Current validation status:
-
-- `npm run lint` passes with warnings for raw `<img>` usage. These are intentional for the current Sanity image rendering approach.
-- `npm run build` passes.
-- Local smoke testing covered homepage rendering, product navigation, product gallery selection, quantity changes, cart subtotal, remove/empty state, success page, and responsive widths down to 320px.
+The current smoke test covers homepage rendering, product navigation, product detail rendering, gallery interaction, quantity changes, Add to Cart, cart open/remove/empty state, and checkout success rendering.
 
 ## Environment Variables
 
-The app expects Sanity and Stripe configuration through environment variables:
-
 ```text
-NEXT_PUBLIC_SANITY_TOKEN=
+SANITY_API_TOKEN=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
 NEXT_PUBLIC_STRIPE_SECRET_KEY=
 ```
 
-Sanity project details are configured in `lib/client.js`. Stripe Checkout sessions are created in `pages/api/stripe.js`.
+`SANITY_API_TOKEN` is server-only and optional when the Sanity dataset is publicly readable. Product images use a browser-safe Sanity image client without a token.
+
+## Portfolio Notes
+
+This project demonstrates a realistic frontend redesign process: preserve working business logic, use Figma as the visual source of truth, improve responsive UI and accessibility, remove avoidable browser token exposure, and add automated browser validation without migrating the app to a different architecture.
+
+The latest polish pass tightened the first-viewport hero, rebuilt the promotional banner to prevent text/image collisions, replaced implementation-looking product detail copy with customer-facing language, and upgraded the footer into a complete storefront footer with navigation, support, trust notes, and social links.
 
 ## Future Improvements
 
-- Replace raw `<img>` tags with `next/image` once Sanity image dimensions and remote image configuration are fully standardized.
-- Add automated Playwright smoke tests for the cart and checkout flows.
-- Add stronger loading and unavailable-product states for edge cases where CMS data is missing.
-- Split some presentational pieces into smaller components if the app grows beyond the current route surface.
+- Rename the Stripe secret environment variable to a server-only name and update deployment settings.
+- Replace raw `<img>` tags with `next/image` after standardizing Sanity image dimensions and remote image config.
+- Add a mocked Stripe checkout assertion for the final checkout button flow.
+- Add loading and unavailable-product states for missing CMS data.

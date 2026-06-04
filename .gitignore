@@ -36,4 +36,7 @@ yarn-error.log*
 gpt.js
 .serena/
 .playwright-cli/
+/playwright-report/
+/test-results/
+/output/playwright/
 

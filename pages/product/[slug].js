@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
-import { client, urlFor } from '../../lib/client';
+import { client } from '../../lib/client';
+import { urlFor } from '../../lib/image';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
@@ -41,7 +42,7 @@ const ProductDetails = ({ product, products }) => {
         </section>
 
         <section className="product-detail-desc" aria-labelledby="product-title">
-          <p className="product-route-label">product/[slug]</p>
+          <p className="product-route-label">Signature audio</p>
           <h1 id="product-title">{name}</h1>
           <p className="price">${price}</p>
           <div className="reviews" aria-label="Rated 4 out of 5 stars">
