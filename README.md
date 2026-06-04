@@ -4,7 +4,7 @@ A dark-luxury ecommerce storefront for premium audio gear, built with Next.js, S
 
 Audiophile Haven is a portfolio-focused frontend redesign that keeps the original commerce functionality intact: live CMS products, dynamic product pages, cart state, Stripe Checkout, and checkout success handling. The UI is now shaped around a Figma-led dark consumer-tech direction with large product imagery, metallic surfaces, sharp CTAs, and responsive layouts.
 
-Live site: https://ecommerce-project-delta.vercel.app/
+Live site: https://ecommerce-project-xhu1-git-main-bbfosho0s-projects.vercel.app/
 
 ## Screenshots
 
